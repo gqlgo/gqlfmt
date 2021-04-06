@@ -26,6 +26,56 @@ usage: gqlfmt [flags] [path ...]
 
 ```
 
+- to stdout
+```
+$ cat *.graphql # display unformatted files
+query A1 {
+     id
+   test
+}
+
+query A2 {
+      id
+      test
+}
+query B1 {
+     id
+ hello
+}
+
+query B2 {
+      id
+
+
+
+      test
+}
+query C1 {
+        id
+}
+
+$ gqlfmt *.graphql
+query A1 {
+        id
+        test
+}
+query A2 {
+        id
+        test
+}
+query B1 {
+        id
+        hello
+}
+query B2 {
+        id
+        test
+}
+query C1 {
+        id
+}
+```
+
 - Over write GraphQL files
 ```
 $ glqfmt -w *.graphql

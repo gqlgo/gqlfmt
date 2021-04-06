@@ -2,11 +2,11 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 
 	"github.com/vektah/gqlparser/v2/ast"
 	"github.com/vektah/gqlparser/v2/formatter"
 	"github.com/vektah/gqlparser/v2/parser"
-	"golang.org/x/xerrors"
 )
 
 func process(filename string, src []byte, opt *Options) ([]byte, error) {
@@ -14,7 +14,7 @@ func process(filename string, src []byte, opt *Options) ([]byte, error) {
 
 	query, err := parser.ParseQuery(source)
 	if err != nil {
-		return nil, xerrors.Errorf(": %w", err)
+		return nil, fmt.Errorf(": %w", err)
 	}
 
 	return queryFormat(query), nil

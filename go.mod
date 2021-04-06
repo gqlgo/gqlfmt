@@ -1,9 +1,12 @@
-module github.com/sonatard/gqlfmt
+module github.com/gqlgo/gqlfmt
 
-go 1.13
+go 1.16
 
 require (
-	github.com/99designs/gqlgen v0.11.3
-	github.com/vektah/gqlparser/v2 v2.0.1
-	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543
+	github.com/agnivade/levenshtein v1.1.0 // indirect
+	github.com/sergi/go-diff v1.2.0 // indirect
+	github.com/stretchr/testify v1.7.0 // indirect
+	github.com/vektah/gqlparser/v2 v2.1.0
+	gopkg.in/yaml.v2 v2.4.0 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )

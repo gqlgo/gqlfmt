@@ -85,19 +85,19 @@ query C1 {
 
 - Over write GraphQL files
 ```sh
-$ glqfmt -w *.graphql
+$ gqlfmt -w *.graphql
 ```
 
 - List files whose formatting differs from gqlfmt's
 ```sh
-$ glqfmt -l *.graphql
+$ gqlfmt -l *.graphql
 a.graphql
 b.graphql
 ```
 
 - Display diffs
 ```sh
-$ glqfmt -d *.graphql
+$ gqlfmt -d *.graphql
 ```
 
 ```diff

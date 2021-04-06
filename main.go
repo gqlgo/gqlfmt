@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"bytes"
 	"errors"
 	"flag"
@@ -164,22 +163,6 @@ var parseFlags = func() []string {
 
 	flag.Parse()
 	return flag.Args()
-}
-
-func bufferedFileWriter(dest string) (w io.Writer, close func()) {
-	f, err := os.Create(dest)
-	if err != nil {
-		log.Fatal(err)
-	}
-	bw := bufio.NewWriter(f)
-	return bw, func() {
-		if err := bw.Flush(); err != nil {
-			log.Fatalf("error flushing %v: %v", dest, err)
-		}
-		if err := f.Close(); err != nil {
-			log.Fatal(err)
-		}
-	}
 }
 
 func gqlfmtMain() {

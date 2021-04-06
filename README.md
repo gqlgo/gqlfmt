@@ -80,3 +80,25 @@ diff -u b.graphql.orig b.graphql
  }
 ```
 
+- from stdin
+
+```
+$ cat a.graphql | gqlfmt -d
+diff -u stdin.go.orig stdin.go
+--- stdin.go.orig       2021-04-06 15:03:59.000000000 +0900
++++ stdin.go    2021-04-06 15:03:59.000000000 +0900
+@@ -1,9 +1,8 @@
+ query A1 {
+-     id
+-   test
++       id
++       test
+ }
+-
+ query A2 {
+-      id
+-      test
++       id
++       test
+ }
+```

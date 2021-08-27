@@ -10,7 +10,7 @@ gqlfmt has two issues. https://github.com/gqlgo/gqlfmt/issues/1 and https://gith
 ## Install
 
 ```
-go install github.com/gqlgo/gqlfmt
+go install github.com/gqlgo/gqlfmt@latest
 ```
 
 ## Usage

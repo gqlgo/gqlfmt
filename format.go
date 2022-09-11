@@ -13,16 +13,28 @@ func process(filename string, src []byte, opt *Options) ([]byte, error) {
 	source := &ast.Source{Name: filename, Input: string(src)}
 
 	query, err := parser.ParseQuery(source)
-	if err != nil {
-		return nil, fmt.Errorf(": %w", err)
+	if err == nil {
+		return queryFormat(query), nil
 	}
 
-	return queryFormat(query), nil
+	schema, err := parser.ParseSchema(source)
+	if err == nil {
+		return schemaFormat(schema), nil
+	}
+
+	return nil, fmt.Errorf("%v is not GraphQL file: %w", filename, err)
 }
 
 func queryFormat(queryDocument *ast.QueryDocument) []byte {
 	var buf bytes.Buffer
 	astFormatter := formatter.NewFormatter(&buf)
 	astFormatter.FormatQueryDocument(queryDocument)
+	return buf.Bytes()
+}
+
+func schemaFormat(schemaDocument *ast.SchemaDocument) []byte {
+	var buf bytes.Buffer
+	astFormatter := formatter.NewFormatter(&buf)
+	astFormatter.FormatSchemaDocument(schemaDocument)
 	return buf.Bytes()
 }

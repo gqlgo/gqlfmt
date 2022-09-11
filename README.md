@@ -2,11 +2,6 @@
 
 `gqlfmt` formats your GraphQL files.
 
-## CAUTION!!
-
-The current version is an alpha version.
-gqlfmt has two issues. https://github.com/gqlgo/gqlfmt/issues/1 and https://github.com/gqlgo/gqlfmt/issues/2
-
 ## Install
 
 ```

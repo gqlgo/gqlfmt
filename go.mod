@@ -2,7 +2,7 @@ module github.com/gqlgo/gqlfmt
 
 go 1.19
 
-require github.com/vektah/gqlparser/v2 v2.5.6
+require github.com/vektah/gqlparser/v2 v2.5.10
 
 require (
 	github.com/stretchr/testify v1.7.0 // indirect

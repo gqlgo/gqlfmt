@@ -1,10 +1,10 @@
 module github.com/gqlgo/gqlfmt
 
-go 1.19
+go 1.23
 
-require github.com/vektah/gqlparser/v2 v2.5.10
+require github.com/vektah/gqlparser/v2 v2.5.30
 
 require (
-	github.com/stretchr/testify v1.7.0 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	github.com/stretchr/testify v1.10.0 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
